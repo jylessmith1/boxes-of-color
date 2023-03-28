@@ -18,12 +18,29 @@ colorButtons.forEach(button => {
 })
 
 boxes.forEach(box => box.addEventListener('click',function() {
+        if(!inRandomMode) {
     box.style.backgroundColor = box.style.backgroundColor === color ? 'black' : color;
+     } else {
+        box.style.backgroundColor = randomRGB();
+     }
 }))
-
+let inRandomMode = false;
+let randomButton = document.querySelector('.random > button')
+randomButton.addEventListener('click', function() {
+    inRandomMode = true;
+   
+    function randomRGB(){
+        let r = Math.floor(Math.random()* 225)
+        let g = Math.floor(Math.random()* 225)
+        let b = Math.floor(Math.random()* 225)
+        return `rgb(${r}), ${g}, ${b})`
+    }
+}) ;
+///////// finish code
 let mydiv =document.getElementsByClassName('random')
 let myButton = document.querySelector('div')
 
+let colorHeading = document.querySelector('header > h1')
 // let allNumber = []
 
 // function newRndmColor() {
@@ -38,8 +55,6 @@ let myButton = document.querySelector('div')
   
 //     });
 
-let randomButton = document.querySelector('.random > buttom')
-    randomButton.addEventListener('click', function(){
-
-        
-})
+// let randomButton = document.querySelector('.random > buttom')
+//     randomButton.addEventListener('click', function(){}
+// );

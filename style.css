@@ -9,7 +9,7 @@ section {
     background-color: black;
 }
 
-.random {
+.random, .color-input {
     display: flex;
     justify-content: center;
 }
